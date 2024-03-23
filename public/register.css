@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+*{
+    margin: 0;
+    box-shadow: border-box;
+    font-family: "Nova Square", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+body{
+    position: relative;
+    height: 100vh;
+    width:100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('unnamed.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+form{
+    width: 25rem;
+    height: 28rem;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255,255,255,0.06);
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,.37);
+    border-left:1px solid rgba(255,255,255,.3);
+    border-top:1px solid rgba(255,255,255,.3);
+    backdrop-filter: blur(16px);
+    overflow-y: overlay;
+}
+h1{
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+    letter-spacing: 3px;
+    margin-bottom: 5%;
+    opacity: .7;
+}
+label{
+    font-size: 20px;
+    margin-left: 10%;
+    opacity: .8;
+    text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+}
+input{
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    width: 80%;
+    margin: 5% auto;
+    margin-bottom: 8%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    opacity: 0.6;
+}
+input[type="password"]:last-of-type{
+    margin-bottom: 4%;
+}
+
+button{
+    width: 50%;
+    margin: 0% auto;
+    font-size: 20px;
+    opacity: .7;
+    background: rgba(255,255,255,0.06);
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.2);
+    box-shadow: 0px 0px 5px 5px rgba(31,38,135,.37);
+    margin-bottom: 2%;
+}
+button:hover{
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+.footer{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+a{
+    font-size: 13px;
+    text-align: center;
+    opacity: .7;
+}
+
+.para{
+    text-align: center;
+    margin-bottom: 1px;
+    font-size: 20px;
+    animation: error 3s ease-in-out forwards;
+}
+
+.error{
+    color: red;
+}
+
+.success{
+    color: green;
+}
+
+@keyframes error {
+    100%{
+        display:none;
+    }
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.form::-webkit-scrollbar{
+    display: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    -webkit-text-fill-color: black;
+    -webkit-text-size-adjust: 16px;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input::placeholder {
+    color: rgb(41, 40, 40);
+}
+

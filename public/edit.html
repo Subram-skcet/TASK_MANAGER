@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit-Task</title>
+    <link rel="stylesheet" href="edit.css"/>
+    <link rel="icon" href="IMG_20240323_003113.jpg" image="/x-icon">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="edit.js"></script>
+</head>
+<body>
+    <div class="full-wrapper">
+        <h1>Edit Task</h1>
+        <div class="task-wrapper">
+            <table class="table">
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td>Task ID :</td>
+                        <td class="taskid ans"><span>12345678</span></td>
+                    </tr>
+                    <tr>
+                        <td>Name :</td>
+                        <td><input type="text" name="task" class="ans"></td>
+                    </tr>
+                    <tr>
+                        <td>Completed?</td>
+                        <td>
+                            <form>
+                                <input type="radio" id="Yes" name="completed" value="yes">
+                                <label for="Yes" class="ans">Yes</label>
+                                <input type="radio" id="No" name="completed" value="no">
+                                <label for="No" class="ans">No</label>
+
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btns">
+                <button class="save">Save</button>
+                <button class="back">Back</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

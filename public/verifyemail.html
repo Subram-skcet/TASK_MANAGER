@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="verifyemail.css">
+    <link rel="icon" href="IMG_20240323_003113.jpg" image="/x-icon">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Verify-Email</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="body">
+            <h2>Verify Email</h2>
+            <p class="para">A Verification link has sent to your mail. Click that link to complete registration process</p>
+            <footer class="nav">
+            <a class="resend">Resend link</a>
+            <a href="/register.html">Back</a>
+        </footer>
+       </div>
+    </div>
+   
+     <script>
+        const mailBtn = document.getElementsByClassName('resend')[0]
+        const BTag = document.querySelector('.body')
+        mailBtn.addEventListener('click',sendMailReq)
+        const pTag = document.createElement('p')
+        pTag.classList.add('p')
+
+        async function sendMailReq(){
+            const name = localStorage.getItem('name')
+            const email = localStorage.getItem('email')
+
+            await axios.post(`api/v1/auth/resend-email?name=${name}&email=${email}`)
+            .then((response)=>{
+                pTag.classList.remove('error')
+                pTag.classList.add('success')
+                pTag.innerText = response.data.msg
+                BTag.append(pTag)
+            })
+            .catch(error =>{
+                pTag.classList.remove('success')
+                pTag.classList.add('error')
+                pTag.innerText = error.response.data.msg
+                BTag.append(pTag)
+            })
+        }
+    </script>
+</body>
+</html>

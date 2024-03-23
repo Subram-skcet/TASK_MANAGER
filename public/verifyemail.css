@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+body{
+    width:100vw;
+    height: 100vh;
+    font-family: "Nova Square", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-style: normal;
+    background: url('/unnamed.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.wrapper{
+    width:70rem;
+    height:40rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(20px);
+}
+h2{
+    font-size: 50px;
+}
+.para{
+   font-size: 40px; 
+}
+.resend{
+    color: blue;
+    cursor: pointer;
+}
+.nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.error{
+    color: red;
+}
+a{
+    font-size: 20px;
+}
+.p{
+    animation: error 3s ease-in-out forwards;
+}
+.success{
+    color: green;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@keyframes error {
+    100%{
+        display:none;
+    }
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
