@@ -51,9 +51,25 @@ const login = async(req,res) =>{
 const register = async(req,res) =>{
     const {name,email,password} = req.body
 
+    let user = await User.findOne({email})
+    
     const RegisterToken = crypto.randomBytes(40).toString('hex')
+    
+    if(user && !user.isRegistered){
+        const origin = 'https://task-manager-4x0s.onrender.com'
+        await RegistrationMail(
+            {
+                name:user.name,
+                email,
+                token:RegisterToken,
+                origin
+            }
+        )
+        throw new CustomError.UnauthenticatedError("Seems like account alredy exists visit your email to complete registration process")
+    }
 
-    const user = await User.create({
+
+    user = await User.create({
         name,
         email,
         RegisterToken,
@@ -62,7 +78,7 @@ const register = async(req,res) =>{
 
     const token = user.createJWT()
     
-    const origin = 'https://task-manager-4x0s.onrender.com'
+    const origin = 'http://localhost:3000'
     await RegistrationMail(
         {
             name,
