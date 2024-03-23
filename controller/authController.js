@@ -24,7 +24,7 @@ const login = async(req,res) =>{
         const RegisterToken = crypto.randomBytes(40).toString('hex')
         user.RegisterToken=RegisterToken
         await user.save()
-        const origin = 'https://taskcontroller.netlify.app'
+        const origin = 'https://task-manager-4x0s.onrender.com'
         await RegistrationMail(
             {
                 name:user.name,
@@ -62,7 +62,7 @@ const register = async(req,res) =>{
 
     const token = user.createJWT()
     
-    const origin = 'https://taskcontroller.netlify.app'
+    const origin = 'https://task-manager-4x0s.onrender.com'
     await RegistrationMail(
         {
             name,
@@ -81,7 +81,7 @@ const resendMail = async(req,res)=>{
     user.RegisterToken=RegisterToken
     await user.save()
     
-    const origin = 'https://taskcontroller.netlify.app'
+    const origin = 'https://task-manager-4x0s.onrender.com'
     await RegistrationMail(
         {
             name,
@@ -105,7 +105,7 @@ const forgetMail = async(req,res)=>{
     user.EmailToken = EmailToken
     await user.save()
 
-    const origin = 'https://taskcontroller.netlify.app'
+    const origin = 'https://task-manager-4x0s.onrender.com'
     await forgetPassMail(
         {
             name:user.name,
