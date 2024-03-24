@@ -78,7 +78,7 @@ const register = async(req,res) =>{
 
     const token = user.createJWT()
     
-    const origin = 'http://localhost:3000'
+    const origin = 'https://task-manager-4x0s.onrender.com'
     await RegistrationMail(
         {
             name,
